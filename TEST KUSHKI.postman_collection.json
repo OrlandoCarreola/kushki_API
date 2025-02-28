@@ -1,0 +1,124 @@
+{
+	"info": {
+		"_postman_id": "7b6979bf-94aa-4670-a668-3a56d397023a",
+		"name": "TEST KUSHKI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28662024"
+	},
+	"item": [
+		{
+			"name": "Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Public-Merchant-Id",
+						"value": "9b13dce397014457b7eda369b813052e",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"card\": {\r\n    \"name\": \"Orlando Prueba\",\r\n    \"number\": \"5451951574925480\",\r\n    \"expiryMonth\": \"08\",\r\n    \"expiryYear\": \"28\",\r\n    \"cvv\": \"121\"\r\n  },\r\n  \"totalAmount\": 16.98,\r\n  \"currency\": \"MXN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api-uat.kushkipagos.com/card/v1/tokens"
+			},
+			"response": []
+		},
+		{
+			"name": "Make a charge",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "7ffc67b5640948c1842cd33739d281b9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"token\": \"998ea1015dce4017a3044828e73369ba\",\r\n  \"amount\": {\r\n    \"subtotalIva\": 0,\r\n    \"subtotalIva0\": 10000,\r\n    \"iva\": 0,\r\n    \"ice\": 0,\r\n    \"total\": 10000\r\n  },\r\n  \"extraTaxes\": {\r\n    \"iac\": 0,\r\n    \"tasaAeroportuaria\": 0,\r\n    \"agenciaDeViaje\": 0\r\n  },\r\n  \"currency\": \"MXN\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api-uat.kushkipagos.com/card/v1/charges"
+			},
+			"response": []
+		},
+		{
+			"name": "Void a transaction",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Private-Merchant-Id",
+						"value": "7ffc67b5640948c1842cd33739d281b9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fullResponse\": \"v2\",\r\n  \"amount\": {\r\n    \"subtotalIva\": 10000,\r\n    \"subtotalIva0\": 0,\r\n    \"ice\": 0,\r\n    \"iva\": 0,\r\n    \"currency\": \"MXN\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api-uat.kushkipagos.com/v1/charges/986222815801589874"
+			},
+			"response": []
+		},
+		{
+			"name": "Transactions list",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Private-Merchant-Id",
+						"value": "7ffc67b5640948c1842cd33739d281b9",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"from\": \"2025-02-26T10:00:00.000\",\r\n  \"to\": \"2025-02-27T10:00:00.000\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "https://api-uat.kushkipagos.com/analytics/v1/transactions-list"
+			},
+			"response": []
+		}
+	]
+}
