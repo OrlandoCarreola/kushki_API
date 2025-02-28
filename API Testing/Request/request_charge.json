@@ -1,0 +1,15 @@
+{
+    "token": "4ad32dd9db2344e789cb0f7bc5cfb838",
+    "amount": {
+      "currency": "MXN",
+      "subtotalIva": 0,
+      "subtotalIva0": 16.98,
+      "iva": 0,
+      "ice": 0,
+      "extraTaxes": {
+        "iac": 0,
+        "tasaAeroportuaria": 0,
+        "agenciaDeViaje": 0
+      }
+    }
+  }

@@ -1,0 +1,11 @@
+{
+    "card": {
+      "name": "Orlando Prueba",
+      "number": "5451951574925480",
+      "expiryMonth": "08",
+      "expiryYear": "28",
+      "cvv": "121"
+    },
+    "totalAmount": 16.98,
+    "currency": "MXN"
+  }

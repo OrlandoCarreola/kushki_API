@@ -1,0 +1,10 @@
+{
+    "fullResponse": "v2",
+    "amount": {
+      "subtotalIva": 16.98,
+      "subtotalIva0": 0,
+      "ice": 0,
+      "iva": 0,
+      "currency": "MXN"
+    }
+  }
